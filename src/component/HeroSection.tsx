@@ -111,7 +111,7 @@ export default function HomePage() {
   }, [menuOpen]);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center bg-black text-white overflow-hidden">
+    <section className="relative h-[55vh] lg:h-screen w-full flex items-center justify-center bg-black text-white overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 will-change-transform">
         <img
@@ -166,7 +166,7 @@ export default function HomePage() {
           Gentle Cardiac Treatments
         </h1>
         <div className="pt-10 flex justify-center" ref={buttonRef}>
-          <Link href="#mainscroll">
+          <Link href="/contact-us">
           <button className="flex items-center gap-2 px-5 py-2 border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-500 ease-in-out">
             Explore Treatment Options
             <FiArrowRightCircle className="text-3xl font-light" />
