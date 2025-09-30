@@ -176,12 +176,12 @@ export default function HomePage() {
       </div>
 
       {/* Scroll Indicator */}
-      <div
+      {/* <div
         ref={scrollRef}
         className="absolute animate-bounce bottom-6 left-1/2 -translate-x-1/2 text-base opacity-70"
       >
         ↓ Scroll to explore
-      </div>
+      </div> */}
 
       {/* Overlay */}
       <div
