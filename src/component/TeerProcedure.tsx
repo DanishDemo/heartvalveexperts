@@ -60,10 +60,12 @@ export default function TeerProcedure() {
             <div>
               <h3 className="text-xl font-semibold text-gray-900">MitraClip</h3>
               <p className="text-md text-gray-600">
-                Used to treat mitral valve regurgitation, where the valve between the left atrium and left
-                ventricle doesn't close fully, causing blood to flow backward into the lungs. MitraClip is a
-                minimally invasive TEER device that clips the valve leaflets together to reduce the leak.
-              </p>
+  Used to treat mitral valve regurgitation, where the valve between the left atrium and left
+  ventricle doesnt close fully, causing blood to flow backward into the lungs. MitraClip is a
+  minimally invasive TEER device that clips the valve leaflets together to reduce the leak.
+</p>
+
+
             </div>
 
             <div>
