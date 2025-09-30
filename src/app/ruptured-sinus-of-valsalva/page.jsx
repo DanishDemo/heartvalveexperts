@@ -220,16 +220,33 @@ const servciepage = () => {
      
       className="text-white relative animate-gradient-circle overflow-hidden"
     >
-      <div  className="max-w-7xl mx-auto text-white py-20 px-5 overflow-hidden">
-      <ProceduresOverview/>
+      <div  className="max-w-7xl mx-auto text-white py-14
+      01  overflow-hidden">
+         <FollowUpSection
+            tag="Who it’s for?"
+            title="Who Needs RSOV Surgery?"
+            intro="Patients with a sinus of Valsalva aneurysm that has ruptured or is at risk of rupture typically need surgical or transcatheter intervention. Symptoms may include chest pain, shortness of breath, palpitations, fatigue, or even loss of consciousness, depending on the severity of the rupture and the chamber involved. Early detection and ruptured sinus of Valsalva treatment can be life-saving."
+            subIntro="You may need RSOV repair if:"
+            bulletPoints={[
+              "You have a confirmed sinus of Valsalva aneurysm on imaging",
+              "You are experiencing symptoms due to left-to-right shunt or heart failure",
+              "There is involvement of the aortic valve or nearby heart structures",
+              "Your cardiologist or cardiac surgeon in Mumbai recommends surgery based on risk"
+            ]}
+            conclusion="This highlights the importance of long-term planning with your heart team, considering factors like valve type, patient anatomy, and individual risks to ensure the best possible care throughout your lifetime."
+            buttonText="Book Appointment Now"
+            imageSrc="/images/service/RSOV/Rectangle 41.webp"
+            imageAlt="Doctor Consultation"
+          />
+          <ProceduresOverview/>
       </div>
       </section>
-      <TaviBenefits
+      {/* <TaviBenefits
         benefits={benefitsData}
         sectionLabel="Benefits of TAVI"
         heading="What are the Benefits of TAVI Surgery/Procedure?"
         sectionIconSrc="/images/icon/Ellipse 3.svg"
-      />
+      /> */}
       <ProcedureDelayRisks
         title="Risks of Delay of RSOV Treatment"
         subtitle="Outcomes of Procedure Delay"
@@ -244,22 +261,7 @@ const servciepage = () => {
           heading="RSOV Surgery Timeline & Recovery"
           leftImageSrc="/images/service/RSOV/Rectangle 42.webp"
         />
-        {/* <FollowUpSection
-            tag="Procedure Follow Up"
-            title="Long-Term Follow Up After TAVI Procedure"
-            intro="Modern transcatheter valves are designed for durability, but like all bioprosthetic valves, they can show structural deterioration over time."
-            subIntro="The 10-year NOTION trial, which evaluated earlier generation TAVI devices, found that:"
-            bulletPoints={[
-              "TAVI valves had comparable long-term clinical outcomes to surgical valves, with similar rates of mortality, stroke, and myocardial infarction.",
-              "TAVI valves showed a lower rate of severe structural valve deterioration (SVD) compared to surgical valves at 10 years.",
-              "Hemodynamic performance was favorable for TAVI valves.",
-              "The overall rate of bioprosthetic valve failure was similar between TAVI and surgical valves."
-            ]}
-            conclusion="This highlights the importance of long-term planning with your heart team, considering factors like valve type, patient anatomy, and individual risks to ensure the best possible care throughout your lifetime."
-            buttonText="Book Appointment Now"
-            imageSrc="/images/service/tavi/5.jpg"
-            imageAlt="Doctor Consultation"
-          /> */}
+       
       </section>
       <TaviBenefits
         benefits={benefitsData2}
