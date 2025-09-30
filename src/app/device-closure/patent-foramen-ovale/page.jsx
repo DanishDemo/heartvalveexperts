@@ -212,10 +212,10 @@ const servciepage = () => {
       <BreadCrumb
         title="PFO Closure"
         subpage="false"
-        image="/images/service/teer/bread.png"
+        image="/images/service/PFO Closure/bread.png"
       />
       <TaviSection
-        imageSrc="/images/service/teer/1.png"
+        imageSrc="/images/service/PFO Closure/1.png"
         imageAlt="TEER Surgery"
         tag="About"
         title="What is the PFO Closure Procedure?"
@@ -227,7 +227,7 @@ const servciepage = () => {
       <ASDClosureSection
         tag="How It's Done"
         title="How Is PFO Closure Done?"
-        imageSrc="/images/asd-closure.png"
+        imageSrc="/images/service/PFO Closure/2.png"
         imageAlt="ASD Closure Illustration"
         steps={[
           {
@@ -278,29 +278,35 @@ const servciepage = () => {
           },
         ]}
       />
-      <TaviWhoFor
+      {/* <TaviWhoFor
         sectionTag="Who It’s For?"
         heading="Who Needs PFO Closure?"
         buttonText="Book Appointment Now"
         conditions={conditionsData}
         imageSrc="/images/service/tavi.webp"
         imageAlt="Patient"
-      />
+      /> */}
       <section className="animate-gradient-circle text-white relative overflow-hidden">
         <FollowUpSection
-          tag="Procedure Follow Up"
-          title="Long-Term Follow Up After TAVI Procedure"
-          intro="Modern transcatheter valves are designed for durability, but like all bioprosthetic valves, they can show structural deterioration over time."
-          subIntro="The 10-year NOTION trial, which evaluated earlier generation TAVI devices, found that:"
+          tag="Who it’s for?"
+          title="Who Needs PFO Closure?"
+          intro="PFO closure is considered only for patients who have a confirmed PFO and meet one or more of the following criteria:"
+          subIntro=""
           bulletPoints={[
-            "TAVI valves had comparable long-term clinical outcomes to surgical valves, with similar rates of mortality, stroke, and myocardial infarction.",
-            "TAVI valves showed a lower rate of severe structural valve deterioration (SVD) compared to surgical valves at 10 years.",
-            "Hemodynamic performance was favorable for TAVI valves.",
-            "The overall rate of bioprosthetic valve failure was similar between TAVI and surgical valves.",
+            "Had a stroke or Transient Ischemic Attack (mini-stroke) with no clear cause.",
+            "Evaluated for cryptogenic stroke during bubble contrast study or pressure testing, where PFO is found as a contributing factor",
+            "Are under 16 to 65 years old with high-risk PFO features.",
+            "Have an atrial septal aneurysm.",
+            "Have migraines with aura.",
+            "Experienced a paradoxical embolism or decompression illness.",
+            "Are at risk of blood clots.",
+            "Prefer a one-time procedure instead of long-term blood thinners",
+            "Want to prevent future strokes without ongoing medication",
+
           ]}
-          conclusion="This highlights the importance of long-term planning with your heart team, considering factors like valve type, patient anatomy, and individual risks to ensure the best possible care throughout your lifetime."
+          conclusion=""
           buttonText="Book Appointment Now"
-          imageSrc="/images/service/tavi/5.jpg"
+          imageSrc="/images/service/PFO Closure/Rectangle 53.webp"
           imageAlt="Doctor Consultation"
         />
       </section>
@@ -315,7 +321,7 @@ const servciepage = () => {
         title="Risks of Delay of PFO Closure"
         subtitle="Outcomes of Procedure Delay"
         risks={risksData}
-        imageSrc="/images/service/tavi/3.jpg"
+        imageSrc="/images/service/PFO Closure/Rectangle 55.webp"
         buttonText="Book Appointment Now"
         imagePosition="left"
       />
@@ -324,7 +330,7 @@ const servciepage = () => {
           timeline={timelineData}
           sectionTitle="Procedure Timeline"
           heading="Recovery & Follow-Up Timeline"
-          leftImageSrc="/images/service/process.jpg"
+          leftImageSrc="/images/service/PFO Closure/Rectangle 54.webp"
           imagePosition="right"
         />
       </section>

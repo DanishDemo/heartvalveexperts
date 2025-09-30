@@ -210,10 +210,10 @@ const servciepage = () => {
       <BreadCrumb
         title="VSD Closure"
         subpage="false"
-        image="/images/service/teer/bread.png"
+        image="/images/service/VSD Closure/bread.png"
       />
       <TaviSection
-        imageSrc="/images/service/teer/1.png"
+        imageSrc="/images/service/VSD Closure/1.png"
         imageAlt="TEER Surgery"
         tag="About"
         title="What is VSD Closure Procedure?"
@@ -225,7 +225,7 @@ const servciepage = () => {
       <ASDClosureSection
         tag="How It's Done"
         title="How is VSD Closure Done?"
-        imageSrc="/images/asd-closure.png"
+        imageSrc="/images/service/VSD Closure/2.png"
         imageAlt="ASD Closure Illustration"
         steps={[
           {
@@ -275,30 +275,33 @@ const servciepage = () => {
         ]}
       />
 
-      <TaviWhoFor
+      {/* <TaviWhoFor
         sectionTag="Who It’s For?"
         heading="Who Needs PFO Closure?"
         buttonText="Book Appointment Now"
         conditions={conditionsData}
-        imageSrc="/images/service/tavi.webp"
+        imageSrc="/images/service/VSD Closure/1.png"
         imageAlt="Patient"
-      />
+      /> */}
 
       <section className="animate-gradient-circle text-white relative overflow-hidden">
         <FollowUpSection
-          tag="Procedure Follow Up"
-          title="Long-Term Follow Up After TAVI Procedure"
-          intro="Modern transcatheter valves are designed for durability, but like all bioprosthetic valves, they can show structural deterioration over time."
-          subIntro="The 10-year NOTION trial, which evaluated earlier generation TAVI devices, found that:"
+          tag="Who it’s for?"
+          title="Who Needs VSD Closure?"
+          intro="VSD closure is recommended for patients with a confirmed VSD and any of the following:"
+          subIntro=""
           bulletPoints={[
-            "TAVI valves had comparable long-term clinical outcomes to surgical valves, with similar rates of mortality, stroke, and myocardial infarction.",
-            "TAVI valves showed a lower rate of severe structural valve deterioration (SVD) compared to surgical valves at 10 years.",
-            "Hemodynamic performance was favorable for TAVI valves.",
-            "The overall rate of bioprosthetic valve failure was similar between TAVI and surgical valves.",
+            "Moderate to large VSDs are typically over 6–10 mm in size or have a left-to-right shunt with a Qp/Qs ratio greater than 1.5:1.",
+            "Signs of left heart enlargement or pulmonary hypertension",
+            "Failure to thrive or poor weight gain in infants and children",
+            "Frequent respiratory infections or breathlessness",
+            "Risk of endocarditis (heart infection)",
+            "Symptoms like fatigue, palpitations, or heart murmur",
+            "Desire to avoid future complications with a one-time VSD closure surgery procedure"
           ]}
-          conclusion="This highlights the importance of long-term planning with your heart team, considering factors like valve type, patient anatomy, and individual risks to ensure the best possible care throughout your lifetime."
+          conclusion=""
           buttonText="Book Appointment Now"
-          imageSrc="/images/service/tavi/5.jpg"
+          imageSrc="/images/service/VSD Closure/Rectangle 56.webp"
           imageAlt="Doctor Consultation"
         />
       </section>
@@ -313,7 +316,7 @@ const servciepage = () => {
         title="Risks of Delay of VSD Closure"
         subtitle="Outcomes of Procedure Delay"
         risks={risksData}
-        imageSrc="/images/service/tavi/3.jpg"
+        imageSrc="/images/service/VSD Closure/Rectangle 58.webp"
         buttonText="Book Appointment Now"
         imagePosition="left"
       />
@@ -322,7 +325,7 @@ const servciepage = () => {
           timeline={timelineData}
           sectionTitle="Procedure Timeline"
           heading="Recovery & Follow-Up Timeline"
-          leftImageSrc="/images/service/process.jpg"
+          leftImageSrc="/images/service/VSD Closure/Rectangle 57.webp"
           imagePosition="right"
         />
       </section>

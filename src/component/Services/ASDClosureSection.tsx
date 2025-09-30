@@ -33,7 +33,7 @@ export default function ASDClosureSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-         className="relative w-full h-[350px] md:h-[420px] lg:h-[520px] rounded-[70px] rounded-br-2xl overflow-hidden"
+         className="relative w-full h-[350px] md:h-[420px] lg:h-[520px] rounded-[70px] rounded-br-2xl shadow-2xl overflow-hidden"
         >
           <Image
             src={imageSrc}
@@ -51,14 +51,18 @@ export default function ASDClosureSection({
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {/* Subtitle */}
-          <p className="text-sm font-semibold uppercase tracking-wider text-gray-600 flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-blue-600 inline-block"></span>
-            {tag}
-          </p>
 
           {/* Title */}
-          <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">
+           <p
+            style={{ letterSpacing: "2px" }}
+            className="text-gray-600 text-base font-medium tracking-wide flex items-center justify-start gap-1 uppercase"
+          >
+            <span className="w-6 h-6 rounded-full">
+              <img src="/images/icon/Ellipse 3.svg" alt="" />
+            </span>{" "}
+            {tag}
+          </p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mt-2">
             {title}
           </h2>
 

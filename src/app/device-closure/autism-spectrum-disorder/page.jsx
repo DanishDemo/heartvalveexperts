@@ -80,12 +80,12 @@ const benefitsData = [
     desc: "Return to daily life in less than a week",
   },
   {
-    iconSrc: "/images/service/icon/6.svg",
+    iconSrc: "/images/service/icon/4.svg",
     title: "Avoids open surgery",
     desc: "No sternotomy or heart-lung machine needed",
   },
   {
-    iconSrc: "/images/service/icon/6.svg",
+   iconSrc: "/images/service/icon/5.svg",
     title: "Long-term success",
     desc: "Excellent outcomes with low complication rates",
   },
@@ -210,10 +210,10 @@ const servciepage = () => {
       <BreadCrumb
         title="ASD Closure"
         subpage="false"
-        image="/images/service/teer/bread.png"
+        image="/images/service/ASD Closure/bread.png"
       />
       <TaviSection
-        imageSrc="/images/service/teer/1.png"
+        imageSrc="/images/service/ASD Closure/1.png"
         imageAlt="TEER Surgery"
         tag="About"
         title="What is the ASD Closure Procedure?"
@@ -223,18 +223,18 @@ const servciepage = () => {
         ]}
         buttonText="Book Appointment Now"
       />
-      <TaviWhoFor
+      {/* <TaviWhoFor
         sectionTag="Who It’s For?"
         heading="Who Needs ASD Closure?"
         buttonText="Book Appointment Now"
         conditions={conditionsData}
         imageSrc="/images/service/tavi.webp"
         imageAlt="Patient"
-      />
+      /> */}
       <ASDClosureSection
         tag="How It's Done"
         title="How Is ASD Closure Done?"
-        imageSrc="/images/asd-closure.png"
+        imageSrc="/images/service/ASD Closure/2.png"
         imageAlt="ASD Closure Illustration"
         steps={[
           {
@@ -294,19 +294,22 @@ const servciepage = () => {
       />
       <section className="animate-gradient-circle text-white relative overflow-hidden">
         <FollowUpSection
-          tag="Procedure Follow Up"
-          title="Long-Term Follow Up After TAVI Procedure"
-          intro="Modern transcatheter valves are designed for durability, but like all bioprosthetic valves, they can show structural deterioration over time."
-          subIntro="The 10-year NOTION trial, which evaluated earlier generation TAVI devices, found that:"
+          tag="Who it’s for?"
+          title="Who Needs ASD Closure?"
+          intro="ASD closure is recommended for patients with a diagnosed atrial septal defect and meet one or more of the following criteria:"
+          subIntro=""
           bulletPoints={[
-            "TAVI valves had comparable long-term clinical outcomes to surgical valves, with similar rates of mortality, stroke, and myocardial infarction.",
-            "TAVI valves showed a lower rate of severe structural valve deterioration (SVD) compared to surgical valves at 10 years.",
-            "Hemodynamic performance was favorable for TAVI valves.",
-            "The overall rate of bioprosthetic valve failure was similar between TAVI and surgical valves.",
+            "Symptoms such as fatigue, shortness of breath, or palpitations",
+            "Evidence of right heart enlargement on imaging",
+            "History of stroke or embolism with no other cause",
+            "Risk of developing pulmonary hypertension",
+            "Significant left-to-right shunting of blood (Qp:Qs ratio > 1.5:1)",
+            "Planned pregnancy, especially in women with large ASD",
+            "Desire to avoid open-heart surgery with a minimally invasive approach"
           ]}
-          conclusion="This highlights the importance of long-term planning with your heart team, considering factors like valve type, patient anatomy, and individual risks to ensure the best possible care throughout your lifetime."
+          conclusion=""
           buttonText="Book Appointment Now"
-          imageSrc="/images/service/tavi/5.jpg"
+          imageSrc="/images/service/ASD Closure/Rectangle 50.webp"
           imageAlt="Doctor Consultation"
         />
       </section>
@@ -321,7 +324,7 @@ const servciepage = () => {
         title="Risks of Delay of ASD Closure"
         subtitle="Outcomes of Procedure Delay"
         risks={risksData}
-        imageSrc="/images/service/tavi/3.jpg"
+        imageSrc="/images/service/ASD Closure/Rectangle 52.webp"
         buttonText="Book Appointment Now"
         imagePosition="left"
       />
@@ -330,7 +333,7 @@ const servciepage = () => {
           timeline={timelineData}
           sectionTitle="Procedure Timeline"
           heading="Recovery & Follow-Up Timeline"
-          leftImageSrc="/images/service/process.jpg"
+          leftImageSrc="/images/service/ASD Closure/Rectangle 51.webp"
           imagePosition="right"
         />
       </section>

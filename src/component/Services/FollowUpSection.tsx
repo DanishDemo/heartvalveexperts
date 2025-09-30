@@ -61,7 +61,7 @@ export default function FollowUpSection({
           </p>
 
           {/* Bullet Points */}
-          <ul className="space-y-3 mb-6">
+          <ul className="space-y-5 mb-6">
             {bulletPoints.map((point, idx) => (
               <li key={idx} className="flex items-start gap-2">
                 <span className="flex-shrink-0 w-5 h-5">
@@ -71,7 +71,7 @@ export default function FollowUpSection({
                     className="w-full h-full object-contain"
                   />
                 </span>
-                <span className="flex-1 font-light">{point}</span>
+                <span className="flex-1 font-light text-lg">{point}</span>
               </li>
             ))}
           </ul>

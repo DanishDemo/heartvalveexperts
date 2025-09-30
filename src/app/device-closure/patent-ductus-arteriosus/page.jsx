@@ -214,10 +214,10 @@ const servciepage = () => {
       <BreadCrumb
         title="PDA Closure"
         subpage="false"
-        image="/images/service/teer/bread.png"
+        image="/images/service/PDA Closure/bread.png"
       />
       <TaviSection
-        imageSrc="/images/service/teer/1.png"
+        imageSrc="/images/service/PDA Closure/1.png"
         imageAlt="TEER Surgery"
         tag="About"
         title="What is PDA Closure Procedure?"
@@ -230,7 +230,7 @@ const servciepage = () => {
       <ASDClosureSection
         tag="How It's Done"
         title="How is PDA Closure Done?"
-        imageSrc="/images/asd-closure.png"
+        imageSrc="/images/service/PDA Closure/2.png"
         imageAlt="ASD Closure Illustration"
         steps={[
           {
@@ -280,30 +280,34 @@ const servciepage = () => {
         ]}
       />
 
-      <TaviWhoFor
+      {/* <TaviWhoFor
         sectionTag="Who It’s For?"
         heading="Who Needs PDA Closure?"
         buttonText="Book Appointment Now"
         conditions={conditionsData}
         imageSrc="/images/service/tavi.webp"
         imageAlt="Patient"
-      />
+      /> */}
 
       <section className="animate-gradient-circle text-white relative overflow-hidden">
         <FollowUpSection
-          tag="Procedure Follow Up"
-          title="Long-Term Follow Up After TAVI Procedure"
-          intro="Modern transcatheter valves are designed for durability, but like all bioprosthetic valves, they can show structural deterioration over time."
-          subIntro="The 10-year NOTION trial, which evaluated earlier generation TAVI devices, found that:"
+          tag="Who it’s for?"
+          title="Who Needs PDA Closure?"
+          intro="PDA closure is recommended in patients who meet one or more of the following criteria:"
+          subIntro=""
           bulletPoints={[
-            "TAVI valves had comparable long-term clinical outcomes to surgical valves, with similar rates of mortality, stroke, and myocardial infarction.",
-            "TAVI valves showed a lower rate of severe structural valve deterioration (SVD) compared to surgical valves at 10 years.",
-            "Hemodynamic performance was favorable for TAVI valves.",
-            "The overall rate of bioprosthetic valve failure was similar between TAVI and surgical valves.",
+            "Infants with large PDA causing heart strain or breathing issues",
+            "Premature babies where PDA affects feeding or oxygen levels",
+            "Children diagnosed with PDA during routine heart check-ups",
+            "Adults with undetected PDA showing fatigue or shortness of breath",
+            "Patients at risk of heart infection (endocarditis) due to PDA",
+            "Those with heart enlargement or lung overload from PDA shunting",
+            "Women planning pregnancy with a known PDA",
+            "Anyone advised closure after PDA is confirmed on echocardiogram",
           ]}
-          conclusion="This highlights the importance of long-term planning with your heart team, considering factors like valve type, patient anatomy, and individual risks to ensure the best possible care throughout your lifetime."
+          conclusion=""
           buttonText="Book Appointment Now"
-          imageSrc="/images/service/tavi/5.jpg"
+          imageSrc="/images/service/PDA Closure/3.webp"
           imageAlt="Doctor Consultation"
         />
       </section>
@@ -318,7 +322,7 @@ const servciepage = () => {
         title="Risks of Delay of PDA Closure"
         subtitle="Outcomes of Procedure Delay"
         risks={risksData}
-        imageSrc="/images/service/tavi/3.jpg"
+        imageSrc="/images/service/PDA Closure/Rectangle 61.webp"
         buttonText="Book Appointment Now"
         imagePosition="left"
       />
@@ -327,7 +331,7 @@ const servciepage = () => {
           timeline={timelineData}
           sectionTitle="Procedure Timeline"
           heading="Recovery & Follow-Up Timeline"
-          leftImageSrc="/images/service/process.jpg"
+          leftImageSrc="/images/service/PDA Closure/Rectangle 60.webp"
           imagePosition="right"
         />
       </section>
