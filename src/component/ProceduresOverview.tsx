@@ -9,35 +9,35 @@ const procedures = [
     title: "TAVI",
     description:
       "A non/minimally invasive procedure that replaces a narrowed aortic valve without the need for open-heart surgery.",
-    img: "/images/homeimages/home.png",
+    img: "/images/homeimages/tavi.png",
   },
   {
     id: 2,
     title: "TMVR",
     description:
       "A procedure to replace the mitral valve through a catheter-based approach.",
-    img: "/images/homeimages/tmvr.jpg",
+    img: "/images/homeimages/tmvr.png",
   },
   {
     id: 3,
     title: "TEER (MyClip/MitraClip)",
     description:
       "A minimally invasive repair procedure for the mitral valve using a clip device.",
-    img: "/images/homeimages/test.jpg",
+    img: "/images/homeimages/teer.png",
   },
   {
     id: 4,
     title: "LAAO",
     description:
       "Left Atrial Appendage Occlusion procedure to reduce stroke risk.",
-    img: "/images/homeimages/home.png",
+    img: "/images/homeimages/laao.png",
   },
   {
     id: 5,
     title: "Device Closures",
     description:
       "Minimally invasive procedures to close abnormal holes in the heart.",
-    img: "/images/homeimages/tmvr.jpg",
+    img: "/images/homeimages/dClosures.png",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function ProceduresOverview() {
 
       <div className="grid md:grid-cols-2 gap-10 items-start">
         {/* Image Section */}
-        <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl">
+        <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden rounded-[70px] rounded-br-2xl">
           <Image
             src={
               procedures.find((p) => p.id === activeId)?.img ||
@@ -71,7 +71,7 @@ export default function ProceduresOverview() {
             }
             alt="Procedure"
             fill
-            className="object-cover rounded-2xl"
+            className="object-cover scale-105"
           />
         </div>
 

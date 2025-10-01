@@ -6,39 +6,32 @@ import Image from "next/image";
 const procedures = [
   {
     id: 1,
-    title: "TAVI",
+    title: "Transaortic Patch Repair",
     description:
-      "A non/minimally invasive procedure that replaces a narrowed aortic valve without the need for open-heart surgery.",
-    img: "/images/homeimages/home.png",
+      "This open-heart surgery involves placing a patch over the rupture site through an aortic approach. The patch seals the communication, restoring normal blood flow. It’s the most common form of ruptured sinus of Valsalva aneurysm surgery, especially when the aortic valve is preserved.",
+    img: "/images/homeimages/1.png",
   },
   {
     id: 2,
-    title: "TMVR",
+    title: "Aortic Valve Replacement (AVR)",
     description:
-      "A procedure to replace the mitral valve through a catheter-based approach.",
-    img: "/images/homeimages/tmvr.jpg",
+      "If the rupture damages the aortic valve, the surgeon may perform sinus of Valsalva aneurysm repair along with aortic valve replacement. This ensures proper valve function and prevents regurgitation.",
+    img: "/images/homeimages/2.png",
   },
   {
     id: 3,
-    title: "TEER (MyClip/MitraClip)",
+    title: "Transcatheter Repair (Minimally Invasive Option)",
     description:
-      "A minimally invasive repair procedure for the mitral valve using a clip device.",
-    img: "/images/homeimages/test.jpg",
+      "In select patients, ruptured sinus of Valsalva procedure in Mumbai can be done via catheterization. A clip or occluder device is guided to the rupture site through blood vessels and deployed to close the hole, offering a safer option for high-risk or elderly patients.",
+    img: "/images/homeimages/3.png",
   },
   {
     id: 4,
-    title: "LAAO",
+    title: "Coronary Artery Bypass (if required)",
     description:
-      "Left Atrial Appendage Occlusion procedure to reduce stroke risk.",
-    img: "/images/homeimages/home.png",
+      "In rare cases, RSOV may affect the coronary arteries. A coronary artery bypass may be added to improve blood supply to the heart muscle.",
+    img: "/images/homeimages/4.png",
   },
-//   {
-//     id: 5,
-//     title: "Device Closures",
-//     description:
-//       "Minimally invasive procedures to close abnormal holes in the heart.",
-//     img: "/images/homeimages/tmvr.jpg",
-//   },
 ];
 
 export default function ProceduresOverview() {

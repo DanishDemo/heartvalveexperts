@@ -1,13 +1,84 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+  import toast from "react-hot-toast";
 
 export default function ContactSection() {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const validate = () => {
+    let newErrors: { [key: string]: string } = {};
+
+    if (!form.name.trim()) newErrors.name = "Full Name is required";
+    if (!form.phone.trim()) {
+      newErrors.phone = "Contact Number is required";
+    } else if (!/^\d{10}$/.test(form.phone)) {
+      newErrors.phone = "Enter a valid 10-digit number";
+    }
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!form.message.trim()) newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (validate()) {
+    const payload = {
+      full_name: form.name,
+      contact_number: form.phone,
+      email: form.email,
+      message: form.message,
+    };
+
+    try {
+      const response = await fetch(
+        "https://hclient.in/heartvalveexperts/wp-json/custom/v1/submit-wpgi-contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const result = await response.json();
+      console.log("API Response:", result);
+
+      if (response.ok) {
+        toast.success("✅ Form submitted successfully!");
+        setForm({ name: "", phone: "", email: "", message: "" }); // reset
+      } else {
+        toast.error("❌ Failed to submit. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("⚠️ Something went wrong. Please try again later.");
+    }
+  }
+};
+
+
   return (
     <section className="py-16 px-6 md:px-12 lg:px-20 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
         {/* Left Side - Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -49,10 +120,7 @@ export default function ContactSection() {
             </li>
             <li className="flex items-center gap-3">
               <FiPhone className="text-black text-4xl mt-1 border p-2 rounded-full" />
-              <a
-                href="tel:+919004506263"
-                className="hover:text-blue-600"
-              >
+              <a href="tel:+919004506263" className="hover:text-blue-600">
                 +91 900 450 6263
               </a>
             </li>
@@ -73,33 +141,65 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="animate-gradient-circle p-6 py-10 lg:p-12 rounded-[50px] shadow-lg"
+          className="animate-gradient-circle p-6 py-10 lg:p-12 rounded-[50px] shadow-lg bg-gradient-to-r from-[#5E0B8A] to-[#E03C7C]"
         >
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <input
-              type="text"
-              placeholder="Contact Number"
-              className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <textarea
-              placeholder="Message"
-              rows={4}
-              className="w-full px-5 py-3 rounded-3xl bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-            ></textarea>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              />
+              {errors.name && (
+                <p className="text-red-300 text-sm mt-1">{errors.name}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="text"
+                placeholder="Contact Number"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              />
+              {errors.phone && (
+                <p className="text-red-300 text-sm mt-1">{errors.phone}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="email"
+                placeholder="Email Address"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              />
+              {errors.email && (
+                <p className="text-red-300 text-sm mt-1">{errors.email}</p>
+              )}
+            </div>
+
+            <div>
+              <textarea
+                placeholder="Message"
+                rows={4}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full px-5 py-3 rounded-3xl bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-300 text-sm mt-1">{errors.message}</p>
+              )}
+            </div>
+
             <div className="flex justify-center">
               <button
                 type="submit"
-                className=" cursor-pointer mx-auto px-5 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-blue-600 transition duration-300"
+                className="cursor-pointer mx-auto px-5 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-blue-600 transition duration-300"
               >
                 Send Enquiry
               </button>
