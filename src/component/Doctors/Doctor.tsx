@@ -8,7 +8,7 @@ interface DoctorProps {
   alt: string;
   tag: string;
   title: string;
-  description?: string[]; // optional banaya
+  description?: string; // optional banaya
   buttonText: string;
   buttonLink?: string; // optional future ke liye
 }
@@ -18,7 +18,7 @@ export default function Doctor({
   alt,
   tag,
   title,
-  description = [], // default empty array
+  description, // default empty array
   buttonText,
   buttonLink = "/contact-us",
 }: DoctorProps) {
@@ -53,15 +53,15 @@ export default function Doctor({
           </h2>
 
           {/* Description */}
-          {description.length > 0 ? (
-            description.map((para, i) => (
-              <p key={i} className="mt-4 leading-relaxed text-gray-600">
-                {para}
+          {/* {description.length > 0 ? (
+            description.map((para, i) => ( */}
+              <p className="mt-4 leading-relaxed text-gray-600">
+                {description}
               </p>
-            ))
+            {/* ))
           ) : (
             <p className="mt-4 text-gray-500 italic">No description available.</p>
-          )}
+          )} */}
 
           {/* CTA Button */}
           <Link

@@ -16,6 +16,7 @@ interface DoctorData {
     alt: string;
   };
   designation: string;
+  cardiologist_description:string;
   cardiologist_long_details?: SectionData[];
 }
 
@@ -66,41 +67,42 @@ export default function DoctorPageClient() {
 
     fetchDoctor();
   }, [slug]);
+ // ✅ Skeleton Loader
+  if (loading) {
+    return (
+      <section className="bg-white">
+        <div className=" mx-auto p-6">
+          {/* Breadcrumb Skeleton */}
+          <div className="h-96 bg-gray-200 rounded w-full mb-6 animate-pulse"></div>
 
- if (loading) {
-  return (
-    <section className="bg-white">
-    <div className="max-w-7xl mx-auto p-6  ">
-      {/* Breadcrumb Skeleton */}
-      <div className="h-8 bg-gray-200 rounded w-1/3 mb-6"></div>
-
-      {/* Doctor Card Skeleton */}
-      <div className="flex flex-col md:flex-row items-center gap-6">
-        <div className="w-48 h-48 bg-gray-200 rounded-full"></div>
-        <div className="flex-1 space-y-4">
-          <div className="h-6 bg-gray-200 rounded w-1/2"></div>
-          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-          <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-          <div className="h-10 bg-gray-300 rounded w-40 mt-4"></div>
-        </div>
-      </div>
-
-      {/* Doctor Profile Skeleton */}
-      <div className="mt-10 space-y-6">
-        {Array(3)
-          .fill(0)
-          .map((_, idx) => (
-            <div key={idx} className="space-y-2">
-              <div className="h-5 bg-gray-200 rounded w-1/3"></div>
-              <div className="h-4 bg-gray-200 rounded w-full"></div>
-              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+          {/* Doctor Card Skeleton */}
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="w-48 h-48 bg-gray-200 rounded-full animate-pulse"></div>
+            <div className="flex-1 space-y-4">
+              <div className="h-6 bg-gray-200 rounded w-1/2 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-2/3 animate-pulse"></div>
+              <div className="h-10 bg-gray-300 rounded w-40 mt-4 animate-pulse"></div>
             </div>
-          ))}
-      </div>
-    </div>
-    </section>
-  );
-}
+          </div>
+
+          {/* Doctor Profile Skeleton */}
+          <div className="mt-10 space-y-6">
+            {Array(3)
+              .fill(0)
+              .map((_, idx) => (
+                <div key={idx} className="space-y-2">
+                  <div className="h-5 bg-gray-200 rounded w-1/3 animate-pulse"></div>
+                  <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
+                  <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
 
 
   if (!doctor) {
@@ -128,7 +130,7 @@ export default function DoctorPageClient() {
         alt={doctor.featured_image?.alt ?? doctor.title}
         tag={doctor.designation}
         title={doctor.title}
-        description={description}
+        description={doctor.cardiologist_description}
         buttonText="Book Appointment Now"
       />
       <DoctorProfile

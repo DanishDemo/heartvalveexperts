@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-  import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -16,63 +16,77 @@ export default function ContactSection() {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const validate = () => {
-    let newErrors: { [key: string]: string } = {};
+  const newErrors: { [key: string]: string } = {};
 
-    if (!form.name.trim()) newErrors.name = "Full Name is required";
-    if (!form.phone.trim()) {
-      newErrors.phone = "Contact Number is required";
-    } else if (!/^\d{10}$/.test(form.phone)) {
-      newErrors.phone = "Enter a valid 10-digit number";
-    }
-    if (!form.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = "Enter a valid email address";
-    }
-    if (!form.message.trim()) newErrors.message = "Message is required";
+  if (!form.name.trim()) newErrors.name = "Full Name is required";
+  if (!form.phone.trim()) {
+    newErrors.phone = "Contact Number is required";
+  } else if (!/^\d{10}$/.test(form.phone)) {
+    newErrors.phone = "Enter a valid 10-digit number";
+  }
+  if (!form.email.trim()) {
+    newErrors.email = "Email is required";
+  } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+    newErrors.email = "Enter a valid email address";
+  }
+  if (!form.message.trim()) newErrors.message = "Message is required";
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
+
 
 
 
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-  if (validate()) {
-    const payload = {
-      full_name: form.name,
-      contact_number: form.phone,
-      email: form.email,
-      message: form.message,
-    };
+if (validate()) {
+  const payload = {
+    full_name: form.name,
+    contact_number: form.phone,
+    email: form.email,
+    message: form.message,
+  };
 
-    try {
-      const response = await fetch(
-        "https://hclient.in/heartvalveexperts/wp-json/custom/v1/submit-wpgi-contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      const result = await response.json();
-      console.log("API Response:", result);
-
-      if (response.ok) {
-        toast.success("✅ Form submitted successfully!");
-        setForm({ name: "", phone: "", email: "", message: "" }); // reset
-      } else {
-        toast.error("❌ Failed to submit. Please try again.");
+  try {
+    const response = await fetch(
+      "https://hclient.in/heartvalveexperts/wp-json/custom/v1/submit-wpgi-contact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("⚠️ Something went wrong. Please try again later.");
+    );
+
+    const result = await response.json();
+    console.log("API Response:", result);
+
+    if (response.ok) {
+      Swal.fire({
+        icon: "success",
+        title: "Success!",
+        text: "✅ Form submitted successfully!",
+      });
+      setForm({ name: "", phone: "", email: "", message: "" }); // reset
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "❌ Failed to submit. Please try again.",
+      });
     }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    Swal.fire({
+      icon: "warning",
+      title: "Error",
+      text: "⚠️ Something went wrong. Please try again later.",
+    });
   }
+}
+
 };
 
 
