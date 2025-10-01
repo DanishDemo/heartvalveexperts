@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -123,10 +124,12 @@ export default function WhoWeAreHero() {
             if (el) contentRefs.current.push(el);
           }}
           className="mt-8"
-        >
-          <button className="px-6 py-3 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition">
+        ><Link className="cursor-pointer" href="/contact-us">
+          <button  style={{ fontWeight: "400" }}
+            className="wht-bg-are text-lg cursor-pointer duration-500 px-6 py-3 border text-black hover:text-[#0074dd] font-normal rounded-full shadow-md hover:bg-gray-100 transition">
             Book A Consultation
           </button>
+          </Link>
         </div>
       </div>
 </div>

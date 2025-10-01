@@ -233,7 +233,6 @@ const servciepage = () => {
               "There is involvement of the aortic valve or nearby heart structures",
               "Your cardiologist or cardiac surgeon in Mumbai recommends surgery based on risk"
             ]}
-            conclusion="This highlights the importance of long-term planning with your heart team, considering factors like valve type, patient anatomy, and individual risks to ensure the best possible care throughout your lifetime."
             buttonText="Book Appointment Now"
             imageSrc="/images/service/RSOV/Rectangle 41.webp"
             imageAlt="Doctor Consultation"
@@ -250,6 +249,7 @@ const servciepage = () => {
       <ProcedureDelayRisks
         title="Risks of Delay of RSOV Treatment"
         subtitle="Outcomes of Procedure Delay"
+        desc="Delaying treatment for a ruptured sinus of Valsalva can lead to serious and life-threatening complications. The rupture causes abnormal blood flow between the aorta and heart chambers, which can quickly escalate if not addressed. Some of the key risks include:"
         risks={risksData}
         imageSrc="/images/service/RSOV/Rectangle 43.webp"
         buttonText="Book Appointment Now"

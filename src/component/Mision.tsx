@@ -36,15 +36,7 @@ const Mision = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          Our mission is to make advanced cardiac care accessible, precise, and
-          compassionate. By bringing together heart specialists in Mumbai,
-          qualified cardiologists, surgeons, and imaging experts, we deliver
-          seamless, multidisciplinary care. With a patient-first approach built
-          on transparent communication, ethical practice, and personalised
-          treatment plans, we guide every individual, whether managing
-          high-risk disease, seeking advanced valve therapy, or simply looking
-          for a trusted second opinion at every step of their heart health
-          journey.
+          Our mission is to make advanced cardiac care accessible, precise, and compassionate. By bringing together heart specialists in Mumbai, qualified cardiologists, surgeons, and imaging experts, we deliver seamless, multidisciplinary care. With a patient-first approach built on transparent communication, ethical practice, and personalised treatment plans, we guide every individual, whether managing high-risk disease, seeking advanced valve therapy, or simply looking for a trusted second opinion at every step of their heart health journey.
         </motion.p>
       </div>
     </section>

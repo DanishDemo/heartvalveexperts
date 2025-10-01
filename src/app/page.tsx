@@ -15,8 +15,8 @@ export default function Home() {
     <HeroSection/>
     <WhoWeAreHero/>
     <WhyChooseHVE />
-    <InnovationCardiacCare/>
     <Doctors/>
+    <InnovationCardiacCare/>
     <PatientSuccessStories />
     <InnovationCarousel />
     <AppointmentCTA/>  

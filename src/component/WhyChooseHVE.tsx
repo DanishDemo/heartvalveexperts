@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProceduresOverview from "./ProceduresOverview";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,12 +131,14 @@ export default function WhyChooseHVE() {
 
         {/* CTA Button */}
         <div className="flex justify-center mt-12 ">
+         <Link className="cursor-pointer" href="/cardiologist-mumbai">
           <button
             style={{ fontWeight: "400" }}
-            className="wht-bg-are text-xl duration-500 px-6 py-3 border text-white hover:text-[#0074dd] font-normal rounded-full shadow-md hover:bg-gray-100 transition"
+            className="wht-bg-are text-xl cursor-pointer duration-500 px-6 py-3 border text-white hover:text-[#0074dd] font-normal rounded-full shadow-md hover:bg-gray-100 transition"
           >
             <span className="">Meet Our Expert Team</span>
           </button>
+          </Link>
         </div>
 
         <ProceduresOverview />

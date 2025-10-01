@@ -224,8 +224,8 @@ const servciepage = () => {
         sectionIconSrc="/images/icon/Ellipse 3.svg"
       />
       <ProcedureDelayRisks
-        title="Outcomes of Procedure Delay"
-        subtitle="Risks of Delay of BMV Surgery/Procedure"
+        title="Risks of Delay of BMV Surgery/Procedure"
+        subtitle="Outcomes of Procedure Delay"
         risks={risksData}
         imageSrc="/images/service/BMV/Rectangle 40.webp"
         buttonText="Book Appointment Now"

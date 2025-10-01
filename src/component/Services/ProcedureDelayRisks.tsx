@@ -6,6 +6,7 @@ import { FiAlertCircle } from "react-icons/fi";
 interface ProcedureDelayRisksProps {
   title: string;
   subtitle: string;
+  desc: string;
   risks: string[];
   imageSrc: string;
   buttonText: string;
@@ -15,6 +16,7 @@ interface ProcedureDelayRisksProps {
 export default function ProcedureDelayRisks({
   title,
   subtitle,
+  desc,
   risks,
   imageSrc,
   buttonText,
@@ -45,6 +47,7 @@ export default function ProcedureDelayRisks({
             {title}
           </h2>
 
+          <p className="text-gray-700 mt-5 pl-2">{desc}</p>
           {/* List */}
           <ul className="mt-6 space-y-4">
             {risks.map((risk, idx) => (
