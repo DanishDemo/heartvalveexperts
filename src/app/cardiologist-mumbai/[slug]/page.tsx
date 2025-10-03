@@ -123,7 +123,7 @@ export default function DoctorPageClient() {
       <BreadCrumb
         title={doctor.title}
         subpage="false"
-        image="/images/service/teer/bread.png"
+        image="/images/contact.png"
       />
       <Doctor
         image={doctor.featured_image?.url ?? "/placeholder.png"}
