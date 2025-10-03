@@ -1,11 +1,6 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProceduresOverview from "./ProceduresOverview";
 import Link from "next/link";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
@@ -35,54 +30,9 @@ const features = [
 ];
 
 export default function WhyChooseHVE() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const featureRefs = useRef<HTMLDivElement[]>([]);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    // Section fade-in
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-
-    // Features stagger animation
-    gsap.fromTo(
-      featureRefs.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-  }, []);
-
   return (
-    <section
-     
-      className="text-white relative animate-gradient-circle overflow-hidden"
-    >
-      <div  ref={sectionRef} className="max-w-7xl mx-auto text-white py-20 px-5 overflow-hidden">
+    <section className="text-white relative animate-gradient-circle overflow-hidden">
+      <div className="max-w-7xl mx-auto text-white py-20 px-5 overflow-hidden">
         <div className="text-center max-w-7xl mx-auto mb-12">
           <p
             style={{ letterSpacing: "2px" }}
@@ -105,9 +55,6 @@ export default function WhyChooseHVE() {
           {features.map((feature, index) => (
             <div
               key={index}
-              ref={(el) => {
-                if (el) featureRefs.current[index] = el;
-              }}
               className="border border-white/30 rounded-2xl p-6 bg-white/5 hover:bg-white/10 transition-all"
             >
               <div className="w-12 h-12 mb-3">
@@ -130,14 +77,14 @@ export default function WhyChooseHVE() {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center mt-12 ">
-         <Link className="cursor-pointer" href="/cardiologist-mumbai">
-          <button
-            style={{ fontWeight: "400" }}
-            className="wht-bg-are text-xl cursor-pointer duration-500 px-6 py-3 border text-white hover:text-[#0074dd] font-normal rounded-full shadow-md hover:bg-gray-100 transition"
-          >
-            <span className="">Meet Our Expert Team</span>
-          </button>
+        <div className="flex justify-center mt-12">
+          <Link className="cursor-pointer" href="/cardiologist-mumbai">
+            <button
+              style={{ fontWeight: "400" }}
+              className="wht-bg-are text-xl cursor-pointer duration-500 px-6 py-3 border text-white hover:text-[#0074dd] font-normal rounded-full shadow-md hover:bg-gray-100 transition"
+            >
+              <span className="">Meet Our Expert Team</span>
+            </button>
           </Link>
         </div>
 

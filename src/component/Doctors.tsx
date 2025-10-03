@@ -76,7 +76,7 @@ export default function Doctors() {
             </Link>
             {doctor.featured_image?.url && (
               <Image
-                className="object-cover h-96 md:h-[350px] w-full"
+                className="object-cover h-96 md:h-[450px] w-full"
                 src={doctor.featured_image.url === null ?  '/images/dummydoc.jpg' : doctor.featured_image.url}
                 width={550}
                 height={500}

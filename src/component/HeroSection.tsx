@@ -191,171 +191,175 @@ export default function HomePage() {
         }`}
       />
 
-      {/* Left Drawer */}
+       {/* Drawer */}
       <div
         ref={menuRef}
-        className="fixed top-0 left-0 w-full rounded-none lg:left-6 lg:my-6 lg:h-[90vh] lg:rounded-4xl h-full lg:w-[370px] bg-white/80 backdrop-blur-xl 
-        text-gray-900 pl-8 py-8 shadow-2xl z-50 transform -translate-x-full opacity-0"
+        className="fixed top-0 left-0 h-full lg:h-[90vh] w-full lg:w-[370px] 
+                  bg-white/90 backdrop-blur-xl text-gray-900 shadow-2xl z-50 
+                  transform -translate-x-full opacity-0 rounded-none 
+                  lg:left-6 lg:my-6 lg:rounded-4xl flex flex-col"
       >
         {/* Close Button */}
-       <button
+        <button
           onClick={() => setMenuOpen(false)}
-          className="flex items-center gap-2 text-lg font-semibold text-black hover:text-gray-900 transition duration-300"
+          className="flex items-center gap-2 text-lg font-semibold text-black hover:text-gray-700 px-8 pt-8"
         >
-          <img src="/images/icon/closemenu.svg" alt="" /> Close
+          <img src="/images/icon/closemenu.svg" alt="close" /> Close
         </button>
 
-        {/* Nav Links */}
-       <nav className="mt-8 space-y-6 text-lg overflow-y-auto h-[70vh] pb-8 scrollbar-hide rounded-lg pr-2">
-          <Link
-            href="/"
-          
-            className="block hover:text-[#0074dd] text-xl transition"
-          >
-            Home
-          </Link>
-           <Link
-            href="/cardiologist-mumbai"
-          
-            className="block hover:text-[#0074dd] text-xl transition"
-          >
-            Our Cardiologists
-          </Link>
-          <Link
-            href="/tavi"
-          
-            className="block hover:text-[#0074dd] text-xl transition"
-          >
-            TAVI
-          </Link>
-          <Link
-            href="/tmvr"
-          
-            className="block hover:text-[#0074dd] text-xl transition"
-          >
-            TMVR
-          </Link>
-          <Link
-            href="/teer"
-          
-            className="block hover:text-[#0074dd] text-xl transition"
-          >
-            TEER (MitraClip & TriClip)
-          </Link>
-          <Link
-            href="/left-atrial-appendage-occlusion"
-          
-            className="block hover:text-[#0074dd] text-xl transition"
-          >
-            LAAO
-          </Link>
+        {/* Nav Links (scrollable area) */}
+        {/* Nav Links (scrollable area) */}
+      <nav className="mt-6 space-y-6 text-lg px-8 pr-4 flex-1 overflow-y-auto pb-5">
+                <Link
+                  href="/"
+                
+                  className="block hover:text-[#0074dd] text-xl transition"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/cardiologist-mumbai"
+                
+                  className="block hover:text-[#0074dd] text-xl transition"
+                >
+                  Our Cardiologists
+                </Link>
+                <Link
+                  href="/tavi"
+                
+                  className="block hover:text-[#0074dd] text-xl transition"
+                >
+                  TAVI
+                </Link>
+                <Link
+                  href="/tmvr"
+                
+                  className="block hover:text-[#0074dd] text-xl transition"
+                >
+                  TMVR
+                </Link>
+                <Link
+                  href="/teer"
+                
+                  className="block hover:text-[#0074dd] text-xl transition"
+                >
+                  TEER (MitraClip & TriClip)
+                </Link>
+                <Link
+                  href="/left-atrial-appendage-occlusion"
+                
+                  className="block hover:text-[#0074dd] text-xl transition"
+                >
+                  LAAO
+                </Link>
 
-          {/* About with toggle */}
-          <div>
-            <button
-              onClick={() => setAboutOpen(!aboutOpen)}
-           
-              className="flex items-center text-xl justify-between w-full hover:text-[#0074dd] transition pr-4"
-            >
-              Device Closures {aboutOpen ? <FiChevronUp /> : <FiChevronDown />}
-            </button>
-            {aboutOpen && (
-              <div className="border-l border-gray-400 pl-4 mt-5 space-y-4 text-sm text-gray-900">
-                <Link href="/device-closure/autism-spectrum-disorder" className=" block text-lg hover:text-[#0074dd]">
-                  ASD
-                </Link>
-                 <Link href="/device-closure/patent-foramen-ovale" className=" block text-lg hover:text-[#0074dd]">
-                  PFO
-                </Link>
-                 <Link href="/device-closure/ventricular-septal-defect" className=" block text-lg hover:text-[#0074dd]">
-                  VSD
-                </Link>
-                 <Link href="/device-closure/patent-ductus-arteriosus" className=" block text-lg hover:text-[#0074dd]">
-                  PDA
-                </Link>
-              </div>
-            )}
-          </div>
+                {/* About with toggle */}
+                <div>
+                  <button
+                    onClick={() => setAboutOpen(!aboutOpen)}
+                
+                    className="flex items-center text-xl justify-between w-full hover:text-[#0074dd] transition pr-4"
+                  >
+                    Device Closures {aboutOpen ? <FiChevronUp /> : <FiChevronDown />}
+                  </button>
+                  {aboutOpen && (
+                    <div className="border-l border-gray-400 pl-4 mt-5 space-y-4 text-sm text-gray-900">
+                      <Link href="/device-closure/autism-spectrum-disorder" className=" block text-lg hover:text-[#0074dd]">
+                        ASD
+                      </Link>
+                      <Link href="/device-closure/patent-foramen-ovale" className=" block text-lg hover:text-[#0074dd]">
+                        PFO
+                      </Link>
+                      <Link href="/device-closure/ventricular-septal-defect" className=" block text-lg hover:text-[#0074dd]">
+                        VSD
+                      </Link>
+                      <Link href="/device-closure/patent-ductus-arteriosus" className=" block text-lg hover:text-[#0074dd]">
+                        PDA
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
-          {/* Procedures with toggle */}
-          <div>
-            <button
-              onClick={() => setProceduresOpen(!proceduresOpen)}
-             
-              className="flex items-center text-xl justify-between w-full hover:text-[#0074dd] transition pr-4"
-            >
-             Other Proceduress {proceduresOpen ? <FiChevronUp /> : <FiChevronDown />}
-            </button>
-            {proceduresOpen && (
-              <div className="border-l-2 border-gray-400 pl-4 mt-5 space-y-4 text-sm text-gray-900">
-                <Link href="/balloon-mitral-valvotomy" className=" block text-lg hover:text-[#0074dd]">
-                  BMV
-                </Link>
-                <Link href="/ruptured-sinus-of-valsalva" className=" block text-lg hover:text-[#0074dd]">
-                  RSOV
-                </Link>
-                <Link href="/tric-valve" className=" block text-lg hover:text-[#0074dd]">
-                  Tric Valve
-                </Link>               
-              </div>
-            )}
-          </div>
-          <div>
-            <button
-              onClick={() => setCardiacOpen(!cardiacOpen)}
-             
-              className="flex items-center text-xl justify-between w-full hover:text-[#0074dd] transition pr-4"
-            >
-             HVE Cardiac Team {cardiacOpen ? <FiChevronUp /> : <FiChevronDown />}
-            </button>
-            {cardiacOpen && (
-              <div className="border-l-2 border-gray-400 pl-4 mt-5 space-y-4 text-sm text-gray-900">
-                <Link href="/cardiologist-mumbai/dr-ankur-u-phatarpekar-m-d-d-m-fscai" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Ankur U. Phatarpekar
-                </Link>
-                <Link href="/cardiologist-mumbai/dr-meghav-manoj-shah-m-b-b-s-m-d-internal-medicine-d-m-d-n-b-cardiology-afesc" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Meghav Manoj Shah
-                </Link>
-                <Link href="/cardiologist-mumbai/dr-amit-s-gangwani-m-b-b-s-dnb-medicine-drnb-cardiology" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Amit S. Gangwani
-                </Link>
-                <Link href="/cardiologist-mumbai/dr-sagar-harshad-uttamrao-m-b-b-s-dnb-general-medicine-drnb-cardiology" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Sagar Harshad Uttamrao 
-                </Link>   
-                <Link href="/cardiologist-mumbai/dr-aniruddha-mohanrao-pawar-m-d-internal-medicine-d-m-cardiology-fscai" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Aniruddha Mohanrao Pawar
-                </Link>
-                <Link href="/cardiologist-mumbai/" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Gourish Shinde
-                </Link>  
-                <Link href="/cardiologist-mumbai/dr-kunal-ajay-patankar-m-b-b-s-m-d-medicine-drnb-cardiology" className=" block text-lg hover:text-[#0074dd]">
-                 Dr. Kunal Ajay Patankar
-                </Link>                
-                {/* <Link href="/cardiologist-mumbai/" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Pravin Lovhale
-                </Link> */}                            
-              </div>
-            )}
-          </div>
+                {/* Procedures with toggle */}
+                <div>
+                  <button
+                    onClick={() => setProceduresOpen(!proceduresOpen)}
+                  
+                    className="flex items-center text-xl justify-between w-full hover:text-[#0074dd] transition pr-4"
+                  >
+                  Other Proceduress {proceduresOpen ? <FiChevronUp /> : <FiChevronDown />}
+                  </button>
+                  {proceduresOpen && (
+                    <div className="border-l-2 border-gray-400 pl-4 mt-5 space-y-4 text-sm text-gray-900">
+                      <Link href="/balloon-mitral-valvotomy" className=" block text-lg hover:text-[#0074dd]">
+                        BMV
+                      </Link>
+                      <Link href="/ruptured-sinus-of-valsalva" className=" block text-lg hover:text-[#0074dd]">
+                        RSOV
+                      </Link>
+                      <Link href="/tric-valve" className=" block text-lg hover:text-[#0074dd]">
+                        Tric Valve
+                      </Link>               
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <button
+                    onClick={() => setCardiacOpen(!cardiacOpen)}
+                  
+                    className="flex items-center text-xl justify-between w-full hover:text-[#0074dd] transition pr-4"
+                  >
+                  HVE Cardiac Team {cardiacOpen ? <FiChevronUp /> : <FiChevronDown />}
+                  </button>
+                  {cardiacOpen && (
+                    <div className="border-l-2 border-gray-400 pl-4 mt-5 space-y-4 text-sm text-gray-900">
+                      <Link href="/cardiologist-mumbai/dr-ankur-u-phatarpekar-m-d-d-m-fscai" className=" block text-lg hover:text-[#0074dd]">
+                        Dr. Ankur U. Phatarpekar
+                      </Link>
+                      <Link href="/cardiologist-mumbai/dr-meghav-manoj-shah-m-b-b-s-m-d-internal-medicine-d-m-d-n-b-cardiology-afesc" className=" block text-lg hover:text-[#0074dd]">
+                        Dr. Meghav Manoj Shah
+                      </Link>
+                      <Link href="/cardiologist-mumbai/dr-amit-s-gangwani-m-b-b-s-dnb-medicine-drnb-cardiology" className=" block text-lg hover:text-[#0074dd]">
+                        Dr. Amit S. Gangwani
+                      </Link>
+                      <Link href="/cardiologist-mumbai/dr-sagar-harshad-uttamrao-m-b-b-s-dnb-general-medicine-drnb-cardiology" className=" block text-lg hover:text-[#0074dd]">
+                        Dr. Sagar Harshad Uttamrao 
+                      </Link>   
+                      {/* <Link href="/cardiologist-mumbai/dr-aniruddha-mohanrao-pawar-m-d-internal-medicine-d-m-cardiology-fscai" className=" block text-lg hover:text-[#0074dd]">
+                        Dr. Aniruddha Mohanrao Pawar
+                      </Link>
+                      <Link href="/cardiologist-mumbai/" className=" block text-lg hover:text-[#0074dd]">
+                        Dr. Gourish Shinde
+                      </Link>   */}
+                      <Link href="/cardiologist-mumbai/dr-kunal-ajay-patankar-m-b-b-s-m-d-medicine-drnb-cardiology" className=" block text-lg hover:text-[#0074dd]">
+                      Dr. Kunal Ajay Patankar
+                      </Link>                
+                      {/* <Link href="/cardiologist-mumbai/" className=" block text-lg hover:text-[#0074dd]">
+                        Dr. Pravin Lovhale
+                      </Link> */}                            
+                    </div>
+                  )}
+                </div>
 
-        
-        </nav>
+              
+              </nav>
 
-        {/* Social Links */}
-        <div className="absolute bottom-8 left-0 w-full py-5 pl-8 overflow-hidden bg-[#cccccd] backdrop-blur-xl">
-          <p className="text-xs tracking-widest text-gray-500  mb-4">STAY CONNECTED</p>
-          <div className="flex items-center gap-6">
-            <Link target="_blank" href="https://www.facebook.com/share/14NuEwMHDKK/" className="hover:text-blue-500 text-3xl">
-              <FaFacebookF />
+
+        {/* Fixed Footer */}
+        <div className="bg-[#cccccd] backdrop-blur-xl lg:rounded-b-4xl px-8 py-5">
+          <p className="text-xs tracking-widest text-gray-600 mb-4">STAY CONNECTED</p>
+          <div className="flex items-center gap-6 text-2xl">
+            <Link target="_blank" href="https://facebook.com">
+              <FaFacebookF className="hover:text-blue-600" />
             </Link>
-            <Link target="_blank" href="https://www.instagram.com/heartvalveexperts?igsh=ZmQ0dGZnMWd4dW45" className="hover:text-blue-500 text-3xl">
-              <FaInstagram />
+            <Link target="_blank" href="https://instagram.com">
+              <FaInstagram className="hover:text-pink-500" />
             </Link>
-            <Link target="_blank" href="https://www.linkedin.com/company/heart-valve-experts/" className="hover:text-blue-500 text-3xl">
-              <FaLinkedinIn />
+            <Link target="_blank" href="https://linkedin.com">
+              <FaLinkedinIn className="hover:text-blue-700" />
             </Link>
-              <Link target="_blank" href="https://www.youtube.com/@HeartValveExperts" className="hover:text-blue-500 text-3xl">
-              <FaYoutube />
+            <Link target="_blank" href="https://youtube.com">
+              <FaYoutube className="hover:text-red-600" />
             </Link>
           </div>
         </div>
