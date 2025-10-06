@@ -321,7 +321,7 @@ export default function Header() {
                   Dr. Aniruddha Pawar
                 </Link>
                 <Link href="/cardiologist-mumbai/" className=" block text-lg hover:text-[#0074dd]">
-                  Dr. Sagar Harshad Uttamrao 
+                  Dr. Harshad Sagar Uttamrao 
                 </Link>
                 <Link href="/cardiologist-mumbai/" className=" block text-lg hover:text-[#0074dd]">
                  Dr. Kunal Ajay Patankar

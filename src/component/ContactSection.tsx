@@ -161,52 +161,52 @@ if (validate()) {
             <div>
               <input
                 type="text"
-                placeholder="Full Name"
+                placeholder="Full Name *"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
               />
               {errors.name && (
-                <p className="text-red-300 text-sm mt-1">{errors.name}</p>
+                <p className="text-white pl-3 text-sm mt-1">{errors.name}</p>
               )}
             </div>
 
             <div>
               <input
                 type="text"
-                placeholder="Contact Number"
+                placeholder="Contact Number *"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
               />
               {errors.phone && (
-                <p className="text-red-300 text-sm mt-1">{errors.phone}</p>
+                <p className="text-white pl-3 text-sm mt-1">{errors.phone}</p>
               )}
             </div>
 
             <div>
               <input
                 type="email"
-                placeholder="Email Address"
+                placeholder="Email Address *"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full px-5 py-3 rounded-full bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
               />
               {errors.email && (
-                <p className="text-red-300 text-sm mt-1">{errors.email}</p>
+                <p className="text-white pl-3 text-sm mt-1">{errors.email}</p>
               )}
             </div>
 
             <div>
               <textarea
-                placeholder="Message"
+                placeholder="Message *"
                 rows={4}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full px-5 py-3 rounded-3xl bg-white/10 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
               ></textarea>
               {errors.message && (
-                <p className="text-red-300 text-sm mt-1">{errors.message}</p>
+                <p className="text-white pl-3 text-sm mt-1">{errors.message}</p>
               )}
             </div>
 

@@ -333,7 +333,7 @@ export default function Services({ title,subpage ,image}: ServicesProps) {
                         Dr. Amit S. Gangwani
                       </Link>
                       <Link href="/cardiologist-mumbai/dr-sagar-harshad-uttamrao-m-b-b-s-dnb-general-medicine-drnb-cardiology" className=" block text-lg hover:text-[#0074dd]">
-                        Dr. Sagar Harshad Uttamrao 
+                        Dr. Harshad Sagar Uttamrao 
                       </Link>   
                       {/* <Link href="/cardiologist-mumbai/dr-aniruddha-mohanrao-pawar-m-d-internal-medicine-d-m-cardiology-fscai" className=" block text-lg hover:text-[#0074dd]">
                         Dr. Aniruddha Mohanrao Pawar

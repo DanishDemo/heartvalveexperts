@@ -5,7 +5,7 @@ import CaseStudy from '@/component/CaseStudy/CaseStudy'
 const casestudiespage = () => {
   return (
     <>
-    <BreadCrumb title="Case Studies" subpage='false' image="/images/service/teer/bread.png"/>
+    <BreadCrumb title="Case Studies" subpage='false' image="/images/contact.png"/>
     <CaseStudy/>
     </>
   )

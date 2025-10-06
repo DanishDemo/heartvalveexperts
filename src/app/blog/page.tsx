@@ -6,7 +6,7 @@ import React from 'react'
 const blogpage = () => {
   return (
     <>
-    <BreadCrumb title="Our Blogs" subpage="false" image="/images/service/teer/bread.png" />
+    <BreadCrumb title="Our Blogs" subpage="false" image="/images/contact.png" />
     <Blog/>
     </>
   )

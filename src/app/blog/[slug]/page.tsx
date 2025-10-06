@@ -37,7 +37,7 @@ export default async function SingleBlogPage({ params }: { params: { slug: strin
 
   return (
     <>
-      <BreadCrumb title={blog.title} subpage="true" image="/images/service/teer/bread.png"/>
+      <BreadCrumb title={blog.title} subpage="true" image="/images/contact.png"/>
       <CardiacComparison blog={blog}/>
       <RelatedBlog />
     </>

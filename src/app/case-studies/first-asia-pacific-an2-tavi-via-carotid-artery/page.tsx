@@ -71,7 +71,7 @@ export default async function SingleBlogPage() {
 
   return (
     <>
-      <BreadCrumb title={'First Asia-Pacific AN2 TAVI via Carotid Artery'} subpage="true" image="/images/service/teer/bread.png"/>
+      <BreadCrumb title={'First Asia-Pacific AN2 TAVI via Carotid Artery'} subpage="true" image="/images/contact.png"/>
       <CardiacComparison blog={blog}/>
       {/* <RelatedBlog /> */}
     </>

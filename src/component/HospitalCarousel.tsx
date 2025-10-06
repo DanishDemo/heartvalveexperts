@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const hospitals = [
-  { src: "/images/hospitals/Logo 1.webp", alt: "P.D. Hinduja Hospital" },
+  { src: "/images/hospitals/Logo 1.svg", alt: "P.D. Hinduja Hospital" },
   { src: "/images/hospitals/Logo 2.webp", alt: "Breach Candy Hospital" },
   { src: "/images/hospitals/Logo 3.webp", alt: "S.L. Raheja Hospital" },
   { src: "/images/hospitals/Logo 4.webp", alt: "Wockhardt Hospital" },
