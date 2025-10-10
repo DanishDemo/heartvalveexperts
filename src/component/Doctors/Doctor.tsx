@@ -1,5 +1,5 @@
 "use client";
-
+import he from "he";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,7 +49,7 @@ export default function Doctor({
 
           {/* Title */}
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mt-2">
-            {title}
+            {he.decode(title)}
           </h2>
 
           {/* Description */}
